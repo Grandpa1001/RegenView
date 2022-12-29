@@ -5,13 +5,13 @@ import { Button, Box, Center, BackgroundImage, Grid} from '@mantine/core';
 import background from '../assets/background2.png';
 
 function Login() {
-  const { address, isConnected } = useAccount()
+  const { isConnected } = useAccount()
   const { connect, connectors, error, isLoading } = useConnect()
 
 
 
   return (
-    <div className="Login">
+    <div className="Login" style={{display: isConnected ? 'none' : ''}}>
     <Grid>
     <Grid.Col span={6} >
     <Box sx={{ maxWidth: 900, maxHeight:910 }} mx="left" >

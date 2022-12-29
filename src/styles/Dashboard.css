@@ -1,0 +1,10 @@
+.Dashboard {
+    background-color:#1A1B1E;
+    border-right: 1px solid #2C2E33;
+    width: 99%;
+    height: 100%;
+}
+
+.Dashboard-label {
+    color:white;
+}
