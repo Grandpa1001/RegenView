@@ -1,18 +1,17 @@
-import './styles/App.css';
+import '../styles/Login.css';
 import { useAccount, useConnect } from 'wagmi';
 import { Button, Box, Center, BackgroundImage, Grid} from '@mantine/core';
 
-import background from './assets/background2.png';
+import background from '../assets/background2.png';
 
-function App() {
+function Login() {
   const { address, isConnected } = useAccount()
-
   const { connect, connectors, error, isLoading } = useConnect()
 
 
 
   return (
-    <div className="App">
+    <div className="Login">
     <Grid>
     <Grid.Col span={6} >
     <Box sx={{ maxWidth: 900, maxHeight:910 }} mx="left" >
@@ -21,7 +20,7 @@ function App() {
         radius="sm"
       >
         <Center p="md">
-        <header className="App-header">
+        <header className="Login-header">
 
         {
       
@@ -57,7 +56,7 @@ function App() {
 
     </Grid.Col>
     <Grid.Col span={6}>
-    <header className="App-header">
+    <header className="Login-header">
         <p>
           Portal do pracy w WEB3
         </p>
@@ -68,4 +67,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

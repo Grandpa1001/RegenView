@@ -8,7 +8,7 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 
 
 
-import App from './App';
+import Login from './components/Login';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [mainnet, goerli],
@@ -29,10 +29,8 @@ const client = createClient({
 render(
 
     <WagmiConfig client={client}>
-        <App />
-    <div className="FaucetBG">
+        <Login />
 
-    </div>
     </WagmiConfig>
 ,
   document.getElementById('root')
