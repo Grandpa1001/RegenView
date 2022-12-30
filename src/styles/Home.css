@@ -9,3 +9,46 @@
 .Home-label {
     color:white;
 }
+
+
+.Home-Container {
+    min-width: 98%;
+}
+
+
+.Home-Grid {
+    background-color: #373a40;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 0px;
+    height: 100%;
+}
+
+.Home-Grid2 {
+    background-color: #373a40;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-left:0px;
+    height: 100%;
+}
+
+
+.Home-SmallGrid3{
+    padding-left: 0px;
+ 
+}
+
+.Home-SmallGrid4{
+    padding-right: 0px;
+}
+
+.Home-Refresh{
+    right:0px;
+    
+}
+
+
+
