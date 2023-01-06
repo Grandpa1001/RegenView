@@ -1,14 +1,12 @@
 import '../styles/Navigation.css';
 import { useDisconnect } from 'wagmi'
 
-
-import { useState } from 'react';
 import { Navbar, Center, Tooltip, UnstyledButton, createStyles, Stack, Image } from '@mantine/core';
 import {
   TablerIcon,
   IconHome2,
-  IconGauge,
-  IconDeviceDesktopAnalytics,
+  IconCoinBitcoin,
+  IconBrandDeno,
   IconFingerprint,
   IconCalendarStats,
   IconUser,
@@ -67,9 +65,9 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 }
 
 const mockdata = [
-    { icon: IconHome2, label: 'Home', href:"home"},
-    { icon: IconGauge, label: 'Dashboard', href:"dashboard"},
-    { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
+    { icon: IconHome2, label: 'Home'},
+    { icon: IconCoinBitcoin, label: 'Crypto'},
+    { icon: IconBrandDeno, label: 'NFT' },
     { icon: IconCalendarStats, label: 'Releases' },
     { icon: IconUser, label: 'Account' },
     { icon: IconFingerprint, label: 'Security' },

@@ -8,13 +8,14 @@
 
 .Home-label {
     color:white;
+    text-align: "center";
+    padding-top: 8px;
 }
 
 
 .Home-Container {
     min-width: 98%;
 }
-
 
 .Home-Grid {
     background-color: #373a40;
@@ -48,6 +49,13 @@
 .Home-Refresh{
     right:0px;
     
+}
+
+
+
+.Home-NaviLink{
+
+    width: 100%;
 }
 
 
