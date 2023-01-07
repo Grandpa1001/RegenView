@@ -4,6 +4,7 @@ import { useAccount } from 'wagmi'
 import { useState } from 'react';
 import { Alchemy, Network, OwnedNft } from "alchemy-sdk";
 import {TableScrollArea} from './Table';
+import {UsersStack} from './CryptoValue';
 
 
 
@@ -13,7 +14,8 @@ import {
   IconBrandDeno,
   IconCoinBitcoin, 
   IconChevronRight,
-  IconDeviceDesktopAnalytics
+  IconDeviceDesktopAnalytics,
+
 } from '@tabler/icons';
 
 const PRIMARY_COL_HEIGHT = 400;
@@ -64,6 +66,32 @@ interface NavigationProps {
  
     };
 
+
+    const data2 = [
+      {
+      avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/5834-156023b3db7ccc9a?w=256',
+      name: 'Ethereum',
+      job: 'Front-end Developer',
+      email: 'john@example.com',
+      rate: 50,
+      },
+      {
+      avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/5827-1dfc07e745256249?w=256',
+      name: 'Jane Doe',
+      job: 'Back-end Developer',
+      email: 'jane@example.com',
+      rate: 60,
+      },
+      {
+      avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/6134-13aa944253df6bf5?w=256',
+      name: 'Bob Johnson',
+      job: 'Full-stack Developer',
+      email: 'bob@example.com',
+      rate: 70,
+      },
+      ];
+    
+
     const data = [
       { name: 'Kitaro', fp: 1.2, supply: 8000 ,totalValue: 10000},
       { name: 'Isekai', fp: 2.3, supply: 12000 ,totalValue: 30000},
@@ -72,12 +100,7 @@ interface NavigationProps {
       // więcej danych
     ];
 
-
-     interface NavigationPropsUpdate {
-      activeUp: number;
-      setActiveUp: (value: number) => void;
-    }
-
+    
   
     return (
       <div className="Home">
@@ -98,11 +121,11 @@ interface NavigationProps {
                         rightSection={<IconChevronRight size={16} stroke={1} />}
                         onClick={() => changeActivePage(1)}
                       />
+
               </Grid.Col>
-
-
-
+              <UsersStack data2={data2} />
           </Grid>
+
         </Skeleton>
         
         <Grid gutter="md">
@@ -145,13 +168,14 @@ interface NavigationProps {
               <Grid className="Home-Grid2">
 
                   <Grid.Col span={8}>
-                    <Text className="Home-label" >3</Text>
+                    <Text className="Home-label" >Account</Text>
                   </Grid.Col>
                   <Grid.Col span={4}>
                     <NavLink className="Home-NaviLink"
                             label="GO"
                             icon={<IconDeviceDesktopAnalytics size={16} stroke={1} />}
                             rightSection={<IconChevronRight size={16} stroke={1.5} />}
+                            onClick={() => changeActivePage(3)}
                           />
                   </Grid.Col>
           
@@ -163,13 +187,14 @@ interface NavigationProps {
             <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={true} visible={false} >
               <Grid className="Home-Grid2">
                 <Grid.Col span={8}>
-                      <Text className="Home-label" >4</Text>
+                      <Text className="Home-label" >Dziennik</Text>
                     </Grid.Col>
                     <Grid.Col span={4}>
                       <NavLink className="Home-NaviLink"
                               label="GO"
                               icon={<IconDeviceDesktopAnalytics size={16} stroke={1} />}
                               rightSection={<IconChevronRight size={16} stroke={1.5} />}
+                              onClick={() => changeActivePage(4)}
                         />
                   </Grid.Col>
               </Grid>

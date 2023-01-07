@@ -68,10 +68,8 @@ const mockdata = [
     { icon: IconHome2, label: 'Home'},
     { icon: IconCoinBitcoin, label: 'Crypto'},
     { icon: IconBrandDeno, label: 'NFT' },
-    { icon: IconCalendarStats, label: 'Releases' },
     { icon: IconUser, label: 'Account' },
-    { icon: IconFingerprint, label: 'Security' },
-    { icon: IconSettings, label: 'Settings' }, 
+    { icon: IconCalendarStats, label: 'Dziennik' },
     
   ];
   interface NavigationProps {

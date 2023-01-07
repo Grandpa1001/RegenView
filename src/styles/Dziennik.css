@@ -1,0 +1,36 @@
+.Dziennik {
+    background-color:#1A1B1E;
+    border-right: 1px solid #2C2E33;
+    width: 99%;
+    height: 100%;
+}
+
+.Dziennik-label {
+    color:white;
+}
+
+.Dziennik-iFrame {
+margin-left:20px;
+
+}
+.Dziennik-linnia {
+    background-color: #1A1B1E;
+    right: 30px;
+    position: fixed;
+    z-index: 10;
+    width: 20px;
+    height: 850px;
+    }
+
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: #070606;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+  }

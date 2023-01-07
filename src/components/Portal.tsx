@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 import Home from './Home';
 import Crypto from './Crypto';
 import NFT from './NFT';
-
+import Dziennik from './Dziennik';
 
 
 function Portal() {
@@ -25,6 +25,8 @@ function Portal() {
             {active === 0 && <Home active={active} setActive={setActive} />}
             {active === 1 && <Crypto active={active} setActive={setActive}/>}
             {active === 2 && <NFT active={active} setActive={setActive}/>}
+
+            {active === 4 && <Dziennik active={active} setActive={setActive}/>}
         </Grid.Col>
     </Grid>
         </div>
