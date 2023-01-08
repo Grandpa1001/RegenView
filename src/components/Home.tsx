@@ -69,26 +69,27 @@ interface NavigationProps {
 
     const data2 = [
       {
-      avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/5834-156023b3db7ccc9a?w=256',
-      name: 'Ethereum',
-      job: 'Front-end Developer',
-      email: 'john@example.com',
-      rate: 50,
+      avatar: 'https://kryptowaluty.info.pl/wp-content/uploads/2018/01/ethereum-opis-150x150.png',
+      name: 'ETH',
+      eth: 0.10,
+      usd: 11,
+      pln: 50,
       },
       {
-      avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/5827-1dfc07e745256249?w=256',
-      name: 'Jane Doe',
-      job: 'Back-end Developer',
-      email: 'jane@example.com',
-      rate: 60,
+      avatar: 'https://logos-world.net/wp-content/uploads/2020/08/Bitcoin-Emblem.png',
+      name: 'BTC',
+      eth: 0.0004,
+      usd: 32,
+      pln: 60,
       },
       {
       avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/6134-13aa944253df6bf5?w=256',
-      name: 'Bob Johnson',
-      job: 'Full-stack Developer',
-      email: 'bob@example.com',
-      rate: 70,
+      name: 'ETH',
+      eth: 0.001,
+      usd: 21,
+      pln: 70,
       },
+      
       ];
     
 
