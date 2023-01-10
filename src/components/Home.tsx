@@ -1,5 +1,6 @@
-import { Container, Grid, SimpleGrid, Skeleton, useMantineTheme, Button, Text, Box, NavLink } from '@mantine/core';
+import { Container, Grid, SimpleGrid, Skeleton, useMantineTheme, Button, Text, Image, NavLink } from '@mantine/core';
 import '../styles/Home.css';
+import cheerio from 'cheerio';
 import { useAccount } from 'wagmi'
 import { useState } from 'react';
 import { Alchemy, Network, OwnedNft } from "alchemy-sdk";
@@ -17,13 +18,32 @@ import {
   IconDeviceDesktopAnalytics,
 
 } from '@tabler/icons';
+import { Avatar } from '@mantine/core/lib/Avatar';
 
 const PRIMARY_COL_HEIGHT = 400;
+const fetch = require('node-fetch');
+
 
 interface NavigationProps {
   active: number;
   setActive: (value: number) => void;
 }
+
+
+async function getImageSrc(url: string, selector: string) {
+    const res = await fetch(url);
+    const html = await res.text();
+    const $ = cheerio.load(html);
+    const imageSrc = $(selector).attr('src');
+    return imageSrc;
+}
+
+const url = 'https://mirror.xyz/0xa62287c62812e9B62945783197F6f8A836fEa031';
+const selector = 'img[alt="avatar"]';
+
+
+
+
 
   function Home({active, setActive} : NavigationProps){
     const [nfts, setNfts] = useState<OwnedNft[]>([]);
@@ -31,12 +51,15 @@ interface NavigationProps {
     const theme = useMantineTheme();
     const SECONDARY_COL_HEIGHT = PRIMARY_COL_HEIGHT / 2 - theme.spacing.md / 2;
     console.log("Navigation "+active);
+
+
+
     const changeActivePage = (activeUP:number) =>{ 
       setActive(activeUP);
 
   }
 
-
+  const [avatar, setAvatar] = useState('');
 
     const config = {
       apiKey: "BbX5_HGODlxiEqHPHNwIahmcLrLF6SCh",
@@ -44,12 +67,13 @@ interface NavigationProps {
     };
     
     const alchemy = new Alchemy(config);
-
+    
     const GetNFTs = async () => {
 
       // Pobierz wszystkie NFT
       console.log("" +address);
       const response = await alchemy.nft.getNftsForOwner(""+address);
+
 
       // Ustaw NFT w stanie aplikacji
       const nfts = response.ownedNfts;
@@ -63,7 +87,9 @@ interface NavigationProps {
       });
       console.log(nfts)
       setNfts(nfts);
- 
+  
+      getImageSrc(url,selector)
+      .then(src => setAvatar(avatar));
     };
 
 
@@ -84,7 +110,7 @@ interface NavigationProps {
       },
       {
       avatar: 'https://images.blur.io/_blur-prod/0xc92ceddfb8dd984a89fb494c376f9a48b999aafc/6134-13aa944253df6bf5?w=256',
-      name: 'ETH',
+      name: 'ETH2',
       eth: 0.001,
       usd: 21,
       pln: 70,
@@ -101,7 +127,7 @@ interface NavigationProps {
       // więcej danych
     ];
 
-    
+
   
     return (
       <div className="Home">
@@ -197,6 +223,8 @@ interface NavigationProps {
                               rightSection={<IconChevronRight size={16} stroke={1.5} />}
                               onClick={() => changeActivePage(4)}
                         />
+                        <Image src={(avatar)} radius="xl"/>
+   
                   </Grid.Col>
               </Grid>
             </Skeleton>
@@ -220,6 +248,8 @@ interface NavigationProps {
                           icon={<IconDeviceDesktopAnalytics size={16} stroke={1} />}
                           rightSection={<IconChevronRight size={16} stroke={1.5} />}
                         /> 
+                  
+
                 </Grid.Col>  
               </Grid>    
             <TableScrollArea data={data} />
