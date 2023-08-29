@@ -16,8 +16,8 @@ import Login from './components/Login';
 const { chains, provider, webSocketProvider } = configureChains(
   [mainnet, goerli],
   [
-    alchemyProvider({apiKey: "BbX5_HGODlxiEqHPHNwIahmcLrLF6SCh"}), //mainnet
-    alchemyProvider({apiKey: "gOvDBVILBb_mWDoSCskHGKJAfNmZO4Yn"}) //goerli
+    alchemyProvider({apiKey: "-}), //mainnet
+    alchemyProvider({apiKey: "-}) //goerli
   ],
 )
 const client = createClient({
